@@ -4,10 +4,8 @@
 		  <li class="nav-item">
 			<a class="nav-link" href="javascript:void(0)">FAQ</a>
 		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#">www.easylearningbd.com</a>
-		  </li>
+
 		</ul>
     </div>
-	  &copy; 2020 <a href="#">Psd to Html Expert</a>. All Rights Reserved.
+	  &copy; 2020 <a href="#">Easy Learning School</a>. All Rights Reserved.
   </footer>
