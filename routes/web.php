@@ -481,6 +481,6 @@ Route::get('student/idcard/get', [ResultReportController::class, 'IdcardGet'])->
 
  
 
-}); // End Middleare Auth Route 
+}); // End Middleare Authentication Route 
 
 });  // Prevent Back Middleare
