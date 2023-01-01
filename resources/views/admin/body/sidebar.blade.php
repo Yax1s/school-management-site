@@ -107,6 +107,22 @@
           </ul>
         </li>
         @endif
+
+          @if(Auth::user()->role == 'Student')
+              <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
+                  <a href="#">
+                      <i data-feather="hard-drive"></i></i> <span>Student Management</span>
+                      <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+                  </a>
+                  <ul class="treeview-menu">
+                      <li><a href="{{ route('registration.fee.singular.view') }}"><i class="ti-more"></i>Registration Fee </a></li>
+
+                  </ul>
+              </li>
+          @endif
+
           @if(Auth::user()->role == 'Admin')
 <li class="treeview {{ ($prefix == '/employees')?'active':'' }}">
           <a href="#">
@@ -170,7 +186,7 @@
         @endif
 
 
-          @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Student')
+          @if(Auth::user()->role == 'Admin')
         <li class="header nav-small-cap">Report Interface</li>
 
        <li class="treeview {{ ($prefix == '/reports')?'active':'' }}">
@@ -190,10 +206,12 @@
            <li class="{{ ($route == 'student.result.view')?'active':'' }}"><a href="{{ route('student.result.view') }}"><i class="ti-more"></i>Student Result </a></li>
 
            <li class="{{ ($route == 'student.idcard.view')?'active':'' }}"><a href="{{ route('student.idcard.view') }}"><i class="ti-more"></i>Student ID Card </a></li>
-            @endif
+
 
           </ul>
         </li>
+          @endif
+
               @if(Auth::user()->role == 'Student')
               <li class="header nav-small-cap">Report Interface</li>
 

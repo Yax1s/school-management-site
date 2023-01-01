@@ -291,9 +291,15 @@ Route::post('/roll/generate/store', [StudentRollController::class, 'StudentRollS
 // Registration Fee Routes
 Route::get('/reg/fee/view', [RegistrationFeeController::class, 'RegFeeView'])->name('registration.fee.view');
 
+Route::get('/reg/fee/singular/view', [RegistrationFeeController::class, 'RegFeeViewSingular'])->name('registration.fee.singular.view');
+
 Route::get('/reg/fee/classwisedata', [RegistrationFeeController::class, 'RegFeeClassData'])->name('student.registration.fee.classwise.get');
 
+Route::get('/reg/fee/singular/classwisedata', [RegistrationFeeController::class, 'RegFeeClassDataSingular'])->name('student.registration.fee.singular.classwise.get');
+
 Route::get('/reg/fee/payslip', [RegistrationFeeController::class, 'RegFeePayslip'])->name('student.registration.fee.payslip');
+
+Route::get('/reg/fee/singular/payslip', [RegistrationFeeController::class, 'RegFeePayslipSingular'])->name('student.registration.fee.singular.payslip');
 
 
 // Monthly Fee Routes

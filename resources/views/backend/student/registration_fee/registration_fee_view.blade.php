@@ -6,13 +6,13 @@
  <div class="content-wrapper">
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
 
-		
+
 <div class="col-12">
 <div class="box bb-3 border-warning">
 				  <div class="box-header">
@@ -20,8 +20,8 @@
 				  </div>
 
 				  <div class="box-body">
-				
-	 
+
+
 			<div class="row">
 
 
@@ -36,16 +36,16 @@
 			 @foreach($years as $year)
  <option value="{{ $year->id }}" >{{ $year->name }}</option>
 		 	@endforeach
-			 
+
 		</select>
-	  </div>		 
 	  </div>
-	  
- 			</div> <!-- End Col md 4 --> 
+	  </div>
+
+ 			</div> <!-- End Col md 4 -->
 
 
 
- 			
+
  		<div class="col-md-4">
 
  		 <div class="form-group">
@@ -56,20 +56,20 @@
 			 @foreach($classes as $class)
 			<option value="{{ $class->id }}">{{ $class->name }}</option>
 		 	@endforeach
-			 
+
 		</select>
-	  </div>		 
 	  </div>
-	  
- 			</div> <!-- End Col md 4 --> 
+	  </div>
+
+ 			</div> <!-- End Col md 4 -->
 
 
  			<div class="col-md-4" style="padding-top: 25px;">
 
   <a id="search" class="btn btn-primary" name="search"> Search</a>
-	  
- 			</div> <!-- End Col md 4 --> 		
-			</div><!--  end row --> 
+
+ 			</div> <!-- End Col md 4 -->
+			</div><!--  end row -->
 
 
  <!--  ////////////////// Registration Fee table /////////////  -->
@@ -90,30 +90,30 @@
  	 <tbody>
  	 	@{{#each this}}
  	 	<tr>
- 	 		@{{{tdsource}}}	
+ 	 		@{{{tdsource}}}
  	 	</tr>
  	 	@{{/each}}
  	 </tbody>
  	</table>
     </script>
 
-    
- 			
- 		</div> 		
+
+
+ 		</div>
  	</div>
- 	
+
  </div>
- 
 
 
-			       
+
+
 			</div>
 			<!-- /.col -->
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
   </div>
 
@@ -126,7 +126,7 @@
       url: "{{ route('student.registration.fee.classwise.get')}}",
       type: "get",
       data: {'year_id':year_id,'class_id':class_id},
-      beforeSend: function() {       
+      beforeSend: function() {
       },
       success: function (data) {
         var source = $("#document-template").html();
