@@ -15,7 +15,6 @@ class ProfileController extends Controller
     	$user = User::find($id);
 
     	return view('backend.user.view_profile',compact('user'));
-        return view('backend.user.index',compact('user'));
     }
 
 

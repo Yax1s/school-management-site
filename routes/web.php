@@ -462,6 +462,10 @@ Route::get('marksheet/generate/view', [MarkSheetController::class, 'MarkSheetVie
 
 Route::get('marksheet/generate/get', [MarkSheetController::class, 'MarkSheetGet'])->name('report.marksheet.get');
 
+Route::get('marksheet/generate/view/singular', [MarkSheetController::class, 'MarkSheetViewSingular'])->name('marksheet.generate.singular.view');
+
+Route::get('marksheet/generate/get/singular', [MarkSheetController::class, 'MarkSheetGetSingular'])->name('report.singular.marksheet.get');
+
 
 // Attendance Report Routes
 Route::get('attendance/report/view', [AttenReportController::class, 'AttenReportView'])->name('attendance.report.view');
@@ -477,6 +481,8 @@ Route::get('student/result/get', [ResultReportController::class, 'ResultGet'])->
 Route::get('student/idcard/view', [ResultReportController::class, 'IdcardView'])->name('student.idcard.view');
 
 Route::get('student/idcard/get', [ResultReportController::class, 'IdcardGet'])->name('report.student.idcard.get');
+
+Route::get('student/idcard/get/singular', [ResultReportController::class, 'IdcardGetsingular'])->name('student.singular.idcard.view');
 
 });
 

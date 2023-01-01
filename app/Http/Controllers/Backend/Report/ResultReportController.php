@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Backend\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\User;
 use App\Models\StudentYear;
 use App\Models\StudentClass;
 use App\Models\ExamType;
 use App\Models\StudentMarks;
 
+use Illuminate\Support\Facades\Auth;
 use PDF;
 use App\Models\AssignStudent;
 
@@ -49,7 +51,7 @@ class ResultReportController extends Controller
 
     	return redirect()->back()->with($notification);
       }
-    } // end Method 
+    } // end Method
 
 
 
@@ -59,6 +61,31 @@ class ResultReportController extends Controller
     	return view('backend.report.idcard.idcard_view',$data);
     }
 
+
+    public function IdcardGetsingular()
+    {
+        $id = Auth::user()->id;
+        $user = AssignStudent::with(['student_year','group'])->where('student_id',$id)->get();
+
+        if ($user == true) {
+           $data['allData'] = AssignStudent::where('student_id', $id)->get();
+            // dd($data['allData']->toArray());
+
+            $pdf = PDF::loadView('backend.report.idcard.individual_idcard_pdf', $data);
+            $pdf->SetProtection(['copy', 'print'], '', 'pass');
+            return $pdf->stream('document.pdf');
+
+        } else {
+
+            $notification = array(
+                'message' => 'Sorry These Criteria Does not match',
+                'alert-type' => 'error'
+            );
+
+            return redirect()->back()->with($notification);
+
+        }
+    }//end method
 
     public function IdcardGet(Request $request){
     	$year_id = $request->year_id;
@@ -84,11 +111,13 @@ class ResultReportController extends Controller
     	return redirect()->back()->with($notification);
 
     }
+    }// end method
 
 
-    }// end method 
+
+
+
 
 
 
 }
- 

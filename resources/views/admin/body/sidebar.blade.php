@@ -62,7 +62,7 @@
         </li>
 
 
-
+          @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
 <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
           <a href="#">
             <i data-feather="credit-card"></i> <span>Setup Management</span>
@@ -85,8 +85,8 @@
 
           </ul>
         </li>
-
-
+        @endif
+          @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
 <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
           <a href="#">
              <i data-feather="hard-drive"></i></i> <span>Student Management</span>
@@ -106,7 +106,7 @@
 
           </ul>
         </li>
-
+        @endif
           @if(Auth::user()->role == 'Admin')
 <li class="treeview {{ ($prefix == '/employees')?'active':'' }}">
           <a href="#">
@@ -129,7 +129,7 @@
         </li>
         @endif
 
-
+          @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
 <li class="treeview {{ ($prefix == '/marks')?'active':'' }}">
           <a href="#">
              <i data-feather="edit-2"></i> <span> Marks Management</span>
@@ -146,7 +146,7 @@
 
           </ul>
         </li>
-
+        @endif
 
 
 
@@ -170,7 +170,7 @@
         @endif
 
 
-          @if(Auth::user()->role == 'Admin')
+          @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Student')
         <li class="header nav-small-cap">Report Interface</li>
 
        <li class="treeview {{ ($prefix == '/reports')?'active':'' }}">
@@ -181,7 +181,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-        <li class="{{ ($route == 'monthly.profit.view')?'active':'' }}"><a href="{{ route('monthly.profit.view') }}"><i class="ti-more"></i>Monthly-Yearly Profite</a></li>
+        <li class="{{ ($route == 'monthly.profit.view')?'active':'' }}"><a href="{{ route('monthly.profit.view') }}"><i class="ti-more"></i>Monthly-Yearly Profit</a></li>
 
           <li class="{{ ($route == 'marksheet.generate.view')?'active':'' }}"><a href="{{ route('marksheet.generate.view') }}"><i class="ti-more"></i>MarkSheet Generate</a></li>
 
@@ -192,11 +192,29 @@
            <li class="{{ ($route == 'student.idcard.view')?'active':'' }}"><a href="{{ route('student.idcard.view') }}"><i class="ti-more"></i>Student ID Card </a></li>
             @endif
 
-
-
-
           </ul>
         </li>
+
+              <li class="header nav-small-cap">Report Interface</li>
+
+              <li class="treeview {{ ($prefix == '/reports')?'active':'' }}">
+                  <a href="#">
+                      <i data-feather="server"></i></i> <span> Reports Management</span>
+                      <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+                  </a>
+                  <ul class="treeview-menu">
+
+                      <li class="{{ ($route == 'marksheet.generate.singular.view')?'active':'' }}"><a href="{{ route('marksheet.generate.singular.view') }}"><i class="ti-more"></i>MarkSheet Generate</a></li>
+
+                      <li class="{{ ($route == 'student.singular.idcard.view')?'active':'' }}"><a href="{{ route('student.singular.idcard.view') }}"><i class="ti-more"></i>Student ID Card </a></li>
+
+
+                  </ul>
+              </li>
+
+
 
 
 
