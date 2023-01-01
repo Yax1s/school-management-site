@@ -50,10 +50,10 @@ class ProfileController extends Controller
 
     	return redirect()->route('profile.view')->with($notification);
 
-    } // End Method 
+    } // End Method
 
 
- 
+
  	public function PasswordView(){
  		return view('backend.user.edit_password');
  	}
@@ -79,7 +79,7 @@ class ProfileController extends Controller
     	}
 
 
- 	} // End Metod 
+ 	} // End Method
 
 
 
@@ -88,4 +88,3 @@ class ProfileController extends Controller
 
 
 }
- 
