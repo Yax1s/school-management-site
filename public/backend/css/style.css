@@ -786,7 +786,7 @@ hr {
   vertical-align: bottom; }
 
 /*******************
-Padding property 
+Padding property
 *******************/
 .p-0 {
   padding: 0px !important; }
@@ -4653,7 +4653,7 @@ Padding property
     padding-top: 100px !important;
     padding-bottom: 100px !important; } }
 /*******************
-Margin property 
+Margin property
 *******************/
 .m-0 {
   margin: 0px !important; }
@@ -8520,7 +8520,7 @@ Margin property
     margin-top: 100px !important;
     margin-bottom: 100px !important; } }
 /*******************
-Width property 
+Width property
 *******************/
 .w-0 {
   width: 0px; }
@@ -10899,7 +10899,7 @@ Width property
   .max-w-lg-auto {
     max-width: auto; } }
 /*******************
-Height property 
+Height property
 *******************/
 .h-0 {
   height: 0px !important; }
@@ -17650,7 +17650,8 @@ time {
   border: 1px solid #d5dfea;
   padding: 5px;
   margin-bottom: 10px;
-  background: .attachment-block light; }
+    background-attachment: fixed;
+   }
   .attachment-block .attachment-img {
     max-width: 100px;
     max-height: 100px;
