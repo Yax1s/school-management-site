@@ -36,7 +36,7 @@ use App\Http\Controllers\Backend\Account\StudentFeeController;
 use App\Http\Controllers\Backend\Account\AccountSalaryController;
 use App\Http\Controllers\Backend\Account\OtherCostController;
 
-use App\Http\Controllers\Backend\Report\ProfiteController;
+use App\Http\Controllers\Backend\Report\ProfitController;
 use App\Http\Controllers\Backend\Report\MarkSheetController;
 use App\Http\Controllers\Backend\Report\AttenReportController;
 use App\Http\Controllers\Backend\Report\ResultReportController;
@@ -451,11 +451,11 @@ Route::post('other/cost/update/{id}', [OtherCostController::class, 'OtherCostUpd
 /// Report Management All Routes
 Route::prefix('reports')->group(function(){
 
-Route::get('monthly/profit/view', [ProfiteController::class, 'MonthlyProfitView'])->name('monthly.profit.view');
+Route::get('monthly/profit/view', [ProfitController::class, 'MonthlyProfitView'])->name('monthly.profit.view');
 
-Route::get('monthly/profit/datewais', [ProfiteController::class, 'MonthlyProfitDatewais'])->name('report.profit.datewais.get');
+Route::get('monthly/profit/datewais', [ProfitController::class, 'MonthlyProfitDatewais'])->name('report.profit.datewais.get');
 
-Route::get('monthly/profit/pdf', [ProfiteController::class, 'MonthlyProfitPdf'])->name('report.profit.pdf');
+Route::get('monthly/profit/pdf', [ProfitController::class, 'MonthlyProfitPdf'])->name('report.profit.pdf');
 
 // MarkSheet Generate Routes
 Route::get('marksheet/generate/view', [MarkSheetController::class, 'MarkSheetView'])->name('marksheet.generate.view');
