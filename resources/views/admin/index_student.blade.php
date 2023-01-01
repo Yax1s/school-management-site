@@ -1,7 +1,6 @@
 @extends('admin.admin_master')
 @section('admin')
 
-
     <div class="content-wrapper">
         <div class="container-full">
             <!-- Content Header (Page header) -->
@@ -12,10 +11,7 @@
                 <div class="row">
 
 
-
                     <div class="col-12">
-
-
 
 
                         <div class="box box-widget widget-user">
@@ -25,13 +21,14 @@
 
                                 <h6 class="widget-user-desc">User Type : {{ $user->usertype }}</h6>
                                 <h6 class="widget-user-desc">User Email : {{ $user->email }}</h6>
-                                <h6 class="widget-user-desc">User id : {{ $user->id }}</h6>
+                                <h6 class="widget-user-desc">User id : {{ $user->id_no }}</h6>
 
 
                             </div>
                             <div class="widget-user-image">
                                 <img class="rounded-circle"
-                                     src="{{ (!empty($user->image))? url('upload/user_images/'.$user->image):url('upload/no_image.jpg') }} " alt="User Avatar">
+                                     src="{{ (!empty($user->image))? url('upload/user_images/'.$user->image):url('upload/no_image.jpg') }} "
+                                     alt="User Avatar">
                             </div>
                             <div class="box-footer">
                                 <div class="row">
@@ -56,18 +53,44 @@
                                             <h5 class="description-header">Gender</h5>
                                             <span class="description-text">{{ $user->gender }}</span>
                                         </div>
+                                        <div class="col-sm-4">
                                         <!-- /.description-block -->
                                     </div>
                                     <!-- /.col -->
                                 </div>
+                                    <div class="col-sm-4">
+                                        <div class="description-block">
+                                            <h5 class="description-header">Father's name</h5>
+                                            <span class="description-text">{{ $user->fname }}</span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <!-- /.description-block -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <div class="col-sm-4 br-1 bl-1">
+                                        <div class="description-block">
+                                            <h5 class="description-header">Mother's name</h5>
+                                            <span class="description-text">{{ $user->mname }}</span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <!-- /.description-block -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="description-block">
+                                            <h5 class="description-header">Religion</h5>
+                                            <span class="description-text">{{ $user->religion }}</span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <!-- /.description-block -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
                                 <!-- /.row -->
                             </div>
                         </div>
-
-
-
-
-
 
 
                     </div>
@@ -79,9 +102,5 @@
 
         </div>
     </div>
-
-
-
-
 
 @endsection

@@ -10,6 +10,25 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
+    public function ProfileViewDashboard(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        if ($user->role == 'Student') {
+            return view('admin.index_student', compact('user'));
+        }
+        else {
+            return view('admin.index', compact('user'));
+        }
+    }
+
+   /* public function ProfileViewDashboardStudent(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        if ($user->role == 'Student') {
+            return view('admin.index_student', compact('user'));
+        }
+    }*/
+
     public function ProfileView(){
     	$id = Auth::user()->id;
     	$user = User::find($id);

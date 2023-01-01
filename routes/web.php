@@ -65,8 +65,7 @@ Route::get('/', function () {
 /*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.index');
 })->name('dashboard');*/
-    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ProfileController::class, 'ProfileView'])->name('dashboard');
-
+    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ProfileController::class, 'ProfileViewDashboard'])->name('dashboard');
 
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
