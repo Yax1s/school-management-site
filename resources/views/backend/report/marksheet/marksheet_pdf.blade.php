@@ -32,7 +32,7 @@
   		</div>
 
   		<div class="col-md-4 text-center" style="float: left;">
-  			<h4><strong>Easy Learning School</strong></h4>
+  			<h4><strong>Samia Instituion</strong></h4>
   			<h6><strong>Nairobi Kenya</strong></h6>
   			<h5><strong><u><i>Academic Transcript</i></u></strong></h5>
   			<h6><strong>{{ $allMarks['0']['exam_type']['name'] }}</strong></h6>

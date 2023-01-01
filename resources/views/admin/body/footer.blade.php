@@ -7,5 +7,5 @@
 
 		</ul>
     </div>
-	  &copy; 2020 <a href="#">Easy Learning School</a>. All Rights Reserved.
+	  &copy; 2020 <a href="#">Samia Instituion</a>. All Rights Reserved.
   </footer>

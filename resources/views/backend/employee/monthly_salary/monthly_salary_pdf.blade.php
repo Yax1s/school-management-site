@@ -36,20 +36,20 @@
   <img src="{{ public_path() . $image_path }}" width="200" height="100">
 
     </h2></td>
-    <td><h2>Easy School ERP</h2>
+    <td><h2>Samia Institution</h2>
 <p>School Address</p>
-<p>Phone : 343434343434</p>
-<p>Email : support@easylerningbd.com</p>
+<p>Phone : +254712345678</p>
+<p>Email : support@samiainstitution.edu</p>
 <p> <b> Employee Monthly Salary </b> </p>
 
-    </td> 
+    </td>
   </tr>
-  
-   
+
+
 </table>
 
-@php 
- 
+@php
+
  $date = date('Y-m',strtotime($details['0']->date));
        if ($date !='') {
         $where[] = ['date','like',$date.'%'];
@@ -62,8 +62,8 @@ $totalattend = App\Models\EmployeeAttendance::with(['user'])->where($where)->whe
         $absentcount = count($totalattend->where('attend_status','Absent'));
         $totalsalaryminus = (float)$absentcount*(float)$salaryperday;
         $totalsalary = (float)$salary-(float)$totalsalaryminus;
- 
-@endphp 
+
+@endphp
 
 <table id="customers">
   <tr>
@@ -98,8 +98,8 @@ $totalattend = App\Models\EmployeeAttendance::with(['user'])->where($where)->whe
     <td><b>Salary This Month</b></td>
     <td>{{ $totalsalary }}</td>
   </tr>
-    
-   
+
+
 </table>
 <br> <br>
   <i style="font-size: 10px; float: right;">Print Data : {{ date("d M Y") }}</i>
@@ -139,13 +139,13 @@ $totalattend = App\Models\EmployeeAttendance::with(['user'])->where($where)->whe
     <td><b>Salary This Month</b></td>
     <td>{{ $totalsalary }}</td>
   </tr>
-    
-   
+
+
 </table>
 <br> <br>
   <i style="font-size: 10px; float: right;">Print Data : {{ date("d M Y") }}</i>
 
- 
+
 
 </body>
 </html>

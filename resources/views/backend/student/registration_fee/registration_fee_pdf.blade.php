@@ -36,26 +36,26 @@
   <img src="{{ public_path() . $image_path }}" width="200" height="100">
 
     </h2></td>
-    <td><h2>Easy School ERP</h2>
+    <td><h2>Samia Institution</h2>
 <p>School Address</p>
-<p>Phone : 343434343434</p>
-<p>Email : support@easylerningbd.com</p>
+<p>Phone : +254712345678</p>
+<p>Email : support@samiainstitution.edu</p>
 <p> <b> Student Registration Fee</b> </p>
 
-    </td> 
+    </td>
   </tr>
-  
-   
+
+
 </table>
 
-@php 
+@php
 $registrationfee = App\Models\FeeCategoryAmount::where('fee_category_id','1')->where('class_id',$details->class_id)->first();
 $originalfee = $registrationfee->amount;
         $discount = $details['discount']['discount'];
         $discounttablefee = $discount/100*$originalfee;
         $finalfee = (float)$originalfee-(float)$discounttablefee;
 
-@endphp 
+@endphp
 
 <table id="customers">
   <tr>
@@ -111,9 +111,9 @@ $originalfee = $registrationfee->amount;
     <td><b>Fee For this Student </b></td>
     <td>{{ $finalfee }} $</td>
   </tr>
- 
-    
-   
+
+
+
 </table>
 <br> <br>
   <i style="font-size: 10px; float: right;">Print Data : {{ date("d M Y") }}</i>
@@ -174,9 +174,9 @@ $originalfee = $registrationfee->amount;
     <td><b>Fee For this Student </b></td>
     <td>{{ $finalfee }} $</td>
   </tr>
- 
-    
-   
+
+
+
 </table>
 <br> <br>
   <i style="font-size: 10px; float: right;">Print Data : {{ date("d M Y") }}</i>

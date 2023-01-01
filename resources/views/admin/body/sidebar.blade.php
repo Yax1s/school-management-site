@@ -15,7 +15,7 @@
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">
 						  <img src="{{asset('backend/images/logo-dark.png')}}" alt="">
-						  <h3><b>Easy</b> Admin</h3>
+						  <h3><b>Samia</b> Institution</h3>
 					 </div>
 				</a>
 			</div>
@@ -194,7 +194,7 @@
 
           </ul>
         </li>
-
+              @if(Auth::user()->role == 'Student')
               <li class="header nav-small-cap">Report Interface</li>
 
               <li class="treeview {{ ($prefix == '/reports')?'active':'' }}">
@@ -213,6 +213,7 @@
 
                   </ul>
               </li>
+              @endif
 
 
 
