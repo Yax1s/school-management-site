@@ -27,7 +27,7 @@
 
 	  <h6 class="widget-user-desc">User Type : {{ $user->usertype }}</h6>
 	  <h6 class="widget-user-desc">User Email : {{ $user->email }}</h6>
-     <h6 class="widget-user-desc">User id : {{ $user->id_no }}</h6>
+     <h6 class="widget-user-desc">User id : {{ $user->id }}</h6>
 
 
 					</div>

@@ -21,14 +21,6 @@ class ProfileController extends Controller
         }
     }
 
-   /* public function ProfileViewDashboardStudent(){
-        $id = Auth::user()->id;
-        $user = User::find($id);
-        if ($user->role == 'Student') {
-            return view('admin.index_student', compact('user'));
-        }
-    }*/
-
     public function ProfileView(){
     	$id = Auth::user()->id;
     	$user = User::find($id);
@@ -36,11 +28,24 @@ class ProfileController extends Controller
     	return view('backend.user.view_profile',compact('user'));
     }
 
+    public function ProfileViewStudent(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+
+        return view('backend.user.view_profile_student',compact('user'));
+    }
+
 
     public function ProfileEdit(){
     	$id = Auth::user()->id;
     	$editData = User::find($id);
     	return view('backend.user.edit_profile',compact('editData'));
+    }
+
+    public function ProfileEditStudent(){
+        $id = Auth::user()->id;
+        $editData = User::find($id);
+        return view('backend.user.edit_profile_student',compact('editData'));
     }
 
 
@@ -52,6 +57,9 @@ class ProfileController extends Controller
     	$data->mobile = $request->mobile;
     	$data->address = $request->address;
     	$data->gender = $request->gender;
+        $data->fname = $request->fname;
+        $data->mname = $request->mname;
+        $data->religion = $request->religion;
 
     	if ($request->file('image')) {
     		$file = $request->file('image');

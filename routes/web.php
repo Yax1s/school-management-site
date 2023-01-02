@@ -95,7 +95,11 @@ Route::prefix('profile')->group(function(){
 
 Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
 
+Route::get('/view/student', [ProfileController::class, 'ProfileViewStudent'])->name('profile.view.student');
+
 Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
+
+Route::get('/edit/student', [ProfileController::class, 'ProfileEditStudent'])->name('profile.edit.student');
 
 Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
 
@@ -229,6 +233,8 @@ Route::get('school/subject/delete/{id}', [SchoolSubjectController::class, 'Subje
 // Assign Subject Routes
 
 Route::get('assign/subject/view', [AssignSubjectController::class, 'ViewAssignSubject'])->name('assign.subject.view');
+
+Route::get('assign/subject/view/student', [AssignSubjectController::class, 'ViewAssignSubjectStudent'])->name('assign.subject.view.student');
 
 Route::get('assign/subject/add', [AssignSubjectController::class, 'AddAssignSubject'])->name('assign.subject.add');
 

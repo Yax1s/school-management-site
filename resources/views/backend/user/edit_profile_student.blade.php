@@ -28,7 +28,7 @@
 
 
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-3">
 
                                                     <div class="form-group">
                                                         <h5>User Name <span class="text-danger">*</span></h5>
@@ -38,9 +38,9 @@
 
                                                     </div>
 
-                                                </div> <!-- End Col Md-6 -->
+                                                </div> <!-- End Col Md-3 -->
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-3">
 
                                                     <div class="form-group">
                                                         <h5>User Email <span class="text-danger">*</span></h5>
@@ -50,7 +50,31 @@
 
                                                     </div>
 
-                                                </div><!-- End Col Md-6 -->
+                                                </div><!-- End Col Md-3 -->
+
+                                                <div class="col-md-3">
+
+                                                    <div class="form-group">
+                                                        <h5>Father's Name <span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <input type="text" name="fname" class="form-control"
+                                                                   value="{{ $editData->fname }}" required=""></div>
+
+                                                    </div>
+
+                                                </div><!-- End Col Md-3 -->
+
+                                                <div class="col-md-3">
+
+                                                    <div class="form-group">
+                                                        <h5>Mother's Name <span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <input type="text" name="mname" class="form-control"
+                                                                   value="{{ $editData->mname }}" required=""></div>
+
+                                                    </div>
+
+                                                </div><!-- End Col Md-3 -->
 
 
                                             </div> <!-- End Row -->
@@ -108,6 +132,21 @@
                                                         </div>
                                                     </div>
                                                 </div> <!-- End Col Md-6 -->
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <h5>User Religion <span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="religion" id="religion" required="" class="form-control">
+                                                                <option value="" selected="" disabled="">Select Religion</option>
+                                                                <option value="Christian" {{ ($editData->religion == "Christian" ? "selected": "") }} >Christian</option>
+                                                                <option value="Muslim" {{ ($editData->religion == "Muslim" ? "selected": "") }} >Muslim</option>
+                                                                <option value="Islam" {{ ($editData->religion == "Islam" ? "selected": "") }} >Islam</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- End Col Md-6 -->
+
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">

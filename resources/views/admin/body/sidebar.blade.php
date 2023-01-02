@@ -47,6 +47,7 @@
         </li>
         @endif
 
+          @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
             <i data-feather="grid"></i> <span>Manage Profile</span>
@@ -55,11 +56,31 @@
             </span>
           </a>
           <ul class="treeview-menu">
+
         <li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
         <li><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
 
           </ul>
         </li>
+          @endif
+
+          @if(Auth::user()->role == 'Student')
+          <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
+              <a href="#">
+                  <i data-feather="grid"></i> <span>Manage Profile</span>
+                  <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+              </a>
+              <ul class="treeview-menu">
+
+                  <li><a href="{{ route('profile.view.student') }}"><i class="ti-more"></i>Your Profile</a></li>
+                  <li><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
+
+              </ul>
+          </li>
+          @endif
+
 
 
           @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
@@ -86,6 +107,23 @@
           </ul>
         </li>
         @endif
+
+          @if(AUTH::user()->role == 'Student')
+              <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
+                  <a href="#">
+                      <i data-feather="credit-card"></i> <span>Setup Management</span>
+                      <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+                  </a>
+                  <ul class="treeview-menu">
+                      <li><a href="{{ route('assign.subject.view.student') }}"><i class="ti-more"></i>Assign Subject</a></li>
+
+                  </ul>
+              </li>
+          @endif
+
+
           @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
 <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
           <a href="#">
