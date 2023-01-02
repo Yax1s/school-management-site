@@ -26,9 +26,9 @@ use App\Models\EmployeeAttendance;
 
 class EmployeeAttendanceController extends Controller
 {
-    
+
     public function AttendanceView(){
-        $data['allData'] = EmployeeAttendance::select('date')->groupBy('date')->orderBy('id','DESC')->get();
+        $data['allData'] = EmployeeAttendance::select('date')->groupBy('id','date')->orderBy('id','DESC')->get();
     	// $data['allData'] = EmployeeAttendance::orderBy('id','DESC')->get();
     	return view('backend.employee.employee_attendance.employee_attendance_view',$data);
     }
@@ -45,7 +45,7 @@ class EmployeeAttendanceController extends Controller
 
     	EmployeeAttendance::where('date', date('Y-m-d', strtotime($request->date)))->delete();
     	$countemployee = count($request->employee_id);
-    	for ($i=0; $i <$countemployee ; $i++) { 
+    	for ($i=0; $i <$countemployee ; $i++) {
     		$attend_status = 'attend_status'.$i;
     		$attend = new EmployeeAttendance();
     		$attend->date = date('Y-m-d',strtotime($request->date));
@@ -81,4 +81,3 @@ class EmployeeAttendanceController extends Controller
 
 
 }
- 

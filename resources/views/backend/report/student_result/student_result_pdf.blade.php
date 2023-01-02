@@ -52,13 +52,24 @@
  <br> <br>
 <table id="customers">
 
-  <tr>
+  {{--<tr>
     <td width="50%"> <h4>Year / Session : </h4> {{ $allData['0']['year']['name'] }} </td>
     <td width="50%"> <h4> Class :  </h4>{{ $allData['0']['student_class']['name'] }} </td>
   </tr>
 
+    <tr>
+        <td width="50%"> <h4>Year / Session : </h4> {{ $allData['0']['year']['name'] }} </td>
+        <td width="50%"> <h4> Class :  </h4>{{ $allData['0']['student_class']['name'] }} </td>
+    </tr>--}}
 
+    @foreach($allData as $data)
+        <tr>
+            <td width="50%"><h4>Year / Session : </h4>{{ $data['year']['name'] }}</td>
+            <td width="50%"><h4> Class :  </h4>{{ $data['student_class']['name'] }}</td>
+            <td width="50%"><h4> Class :  </h4>{{ $data['student_class']['name'] }}</td>
 
+        </tr>
+    @endforeach
 
 </table>
 <br> <br>

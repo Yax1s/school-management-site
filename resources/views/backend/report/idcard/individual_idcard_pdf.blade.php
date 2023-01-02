@@ -53,7 +53,7 @@
 
         <tr>
             <td>IMAGE</td>
-            <td>Easy School </td>
+            <td>Samia Institution </td>
             <td> Student Id Card</td>
 
         </tr>

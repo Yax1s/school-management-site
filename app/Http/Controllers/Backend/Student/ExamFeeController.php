@@ -19,7 +19,7 @@ use PDF;
 
 class ExamFeeController extends Controller
 {
-    
+
 public function ExamFeeView(){
         $data['years'] = StudentYear::all();
     	$data['classes'] = StudentClass::all();
@@ -31,6 +31,7 @@ public function ExamFeeView(){
 public function ExamFeeClassData(Request $request){
     	 $year_id = $request->year_id;
     	 $class_id = $request->class_id;
+
     	 if ($year_id !='') {
     	 	$where[] = ['year_id','like',$year_id.'%'];
     	 }
@@ -58,7 +59,7 @@ public function ExamFeeClassData(Request $request){
     	 	$html[$key]['tdsource'] .= '<td>'.$v->roll.'</td>';
     	 	$html[$key]['tdsource'] .= '<td>'.$registrationfee->amount.'</td>';
     	 	$html[$key]['tdsource'] .= '<td>'.$v['discount']['discount'].'%'.'</td>';
-    	 	
+
     	 	$originalfee = $registrationfee->amount;
     	 	$discount = $v['discount']['discount'];
     	 	$discounttablefee = $discount/100*$originalfee;
@@ -69,10 +70,10 @@ public function ExamFeeClassData(Request $request){
     	 	$html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("student.exam.fee.payslip").'?class_id='.$v->class_id.'&student_id='.$v->student_id.'&exam_type_id='.$request->exam_type_id.' ">Fee Slip</a>';
     	 	$html[$key]['tdsource'] .= '</td>';
 
-    	 }  
+    	 }
     	return response()->json(@$html);
 
-    }// end method 
+    }// end method
 
 
 public function ExamFeePayslip(Request $request){
@@ -96,4 +97,3 @@ public function ExamFeePayslip(Request $request){
 
 
 }
- 

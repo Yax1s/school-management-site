@@ -111,6 +111,14 @@ public function UpdateAssignSubject(Request $request,$class_id){
 
  	}
 
+    public function DetailsSubjectStudent($class_id){
+        $data['detailsData'] = AssignSubject::where('class_id',$class_id)->orderBy('subject_id','asc')->get();
+
+        return view('backend.setup.assign_subject.view_subject_details_students',$data);
+
+
+    }
+
 
 
 

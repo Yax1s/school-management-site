@@ -5,21 +5,21 @@
  <div class="content-wrapper">
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
 
-		
+
 <div class="col-12">
 <div class="box bb-3 border-warning">
 				  <div class="box-header">
-					<h4 class="box-title">Student <strong>Marsk Entry</strong></h4>
+					<h4 class="box-title">Student <strong>Marks Entry</strong></h4>
 				  </div>
 
 				  <div class="box-body">
-				
+
 		<form method="post" action="{{ route('marks.entry.store') }}">
 			@csrf
 			<div class="row">
@@ -36,16 +36,16 @@
 			 @foreach($years as $year)
  <option value="{{ $year->id }}" >{{ $year->name }}</option>
 		 	@endforeach
-			 
+
 		</select>
-	  </div>		 
 	  </div>
-	  
- 			</div> <!-- End Col md 3 --> 
+	  </div>
+
+ 			</div> <!-- End Col md 3 -->
 
 
 
- 			
+
  		<div class="col-md-3">
 
  		 <div class="form-group">
@@ -56,12 +56,12 @@
 			 @foreach($classes as $class)
 			<option value="{{ $class->id }}">{{ $class->name }}</option>
 		 	@endforeach
-			 
+
 		</select>
-	  </div>		 
 	  </div>
-	  
- 			</div> <!-- End Col md 3 --> 
+	  </div>
+
+ 			</div> <!-- End Col md 3 -->
 
 
  		<div class="col-md-3">
@@ -71,13 +71,13 @@
 		<div class="controls">
 	 <select name="assign_subject_id" id="assign_subject_id"  required="" class="form-control">
 			<option  selected="" >Select Subject</option>
-			  
-			 
+
+
 		</select>
-	  </div>		 
 	  </div>
-	  
- 			</div> <!-- End Col md 3 --> 
+	  </div>
+
+ 			</div> <!-- End Col md 3 -->
 
 
 <div class="col-md-3">
@@ -90,12 +90,12 @@
 			 @foreach($exam_types as $exam)
 			<option value="{{ $exam->id }}">{{ $exam->name }}</option>
 		 	@endforeach
-			 
+
 		</select>
-	  </div>		 
 	  </div>
-	  
- 			</div> <!-- End Col md 3 --> 
+	  </div>
+
+ 			</div> <!-- End Col md 3 -->
 
 
 
@@ -104,9 +104,9 @@
  			<div class="col-md-3"  >
 
   <a id="search" class="btn btn-primary" name="search"> Search</a>
-	  
- 			</div> <!-- End Col md 3 --> 		
-			</div><!--  end row --> 
+
+ 			</div> <!-- End Col md 3 -->
+			</div><!--  end row -->
 
 
  <!--  ////////////////// Mark Entry table /////////////  -->
@@ -122,30 +122,30 @@
  					<th>Father Name </th>
  					<th>Gender</th>
  					<th>Marks</th>
- 				 </tr> 				
+ 				 </tr>
  			</thead>
  			<tbody id="marks-entry-tr">
- 				
+
  			</tbody>
- 			
+
  		</table>
  <input type="submit" class="btn btn-rounded btn-primary" value="Submit">
 
  	</div>
- 	
+
  </div>
- 
 
-		</form> 
 
-			       
+		</form>
+
+
 			</div>
 			<!-- /.col -->
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
   </div>
 

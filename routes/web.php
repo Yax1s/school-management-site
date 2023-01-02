@@ -246,6 +246,8 @@ Route::post('assign/subject/update/{class_id}', [AssignSubjectController::class,
 
 Route::get('assign/subject/details/{class_id}', [AssignSubjectController::class, 'DetailsAssignSubject'])->name('assign.subject.details');
 
+Route::get('assign/subject/details/s/{class_id}', [AssignSubjectController::class, 'DetailsSubjectStudent'])->name('details.subject.student');
+
 
 // Designation All Routes
 
