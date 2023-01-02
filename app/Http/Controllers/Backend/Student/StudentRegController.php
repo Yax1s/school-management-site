@@ -38,11 +38,11 @@ class StudentRegController extends Controller
 
     	$data['year_id'] = $request->year_id;
     	$data['class_id'] = $request->class_id;
-    	 
+
     	$data['allData'] = AssignStudent::where('year_id',$request->year_id)->where('class_id',$request->class_id)->get();
     	return view('backend.student.student_reg.student_view',$data);
 
-    } 
+    }
 
 
     public function StudentRegAdd(){
@@ -80,7 +80,7 @@ class StudentRegController extends Controller
     			$id_no = '0'.$studentId;
     		}
 
-    	} // end else 
+    	} // end else
 
     	$final_id_no = $checkYear.$id_no;
     	$user = new User();
@@ -96,6 +96,8 @@ class StudentRegController extends Controller
     	$user->address = $request->address;
     	$user->gender = $request->gender;
     	$user->religion = $request->religion;
+        $user->email=$request->email;
+        $user->role = 'Student';
     	$user->dob = date('Y-m-d',strtotime($request->dob));
 
     	if ($request->file('image')) {
@@ -130,10 +132,10 @@ class StudentRegController extends Controller
 
     	return redirect()->route('student.registration.view')->with($notification);
 
-    } // End Method 
+    } // End Method
 
 
- 
+
     public function StudentRegEdit($student_id){
     	$data['years'] = StudentYear::all();
     	$data['classes'] = StudentClass::all();
@@ -151,10 +153,10 @@ class StudentRegController extends Controller
 
  public function StudentRegUpdate(Request $request,$student_id){
     	DB::transaction(function() use($request,$student_id){
-    	 
 
-    	 
-    	$user = User::where('id',$student_id)->first();    	 
+
+
+    	$user = User::where('id',$student_id)->first();
     	$user->name = $request->name;
     	$user->fname = $request->fname;
     	$user->mname = $request->mname;
@@ -162,6 +164,7 @@ class StudentRegController extends Controller
     	$user->address = $request->address;
     	$user->gender = $request->gender;
     	$user->religion = $request->religion;
+        $user->email=$request->email;
     	$user->dob = date('Y-m-d',strtotime($request->dob));
 
     	if ($request->file('image')) {
@@ -174,7 +177,7 @@ class StudentRegController extends Controller
  	    $user->save();
 
           $assign_student = AssignStudent::where('id',$request->id)->where('student_id',$student_id)->first();
-           
+
           $assign_student->year_id = $request->year_id;
           $assign_student->class_id = $request->class_id;
           $assign_student->group_id = $request->group_id;
@@ -182,7 +185,7 @@ class StudentRegController extends Controller
           $assign_student->save();
 
           $discount_student = DiscountStudent::where('assign_student_id',$request->id)->first();
-         
+
           $discount_student->discount = $request->discount;
           $discount_student->save();
 
@@ -196,7 +199,7 @@ class StudentRegController extends Controller
 
     	return redirect()->route('student.registration.view')->with($notification);
 
-    } // End Method 
+    } // End Method
 
 
     public function StudentRegPromotion($student_id){
@@ -206,7 +209,7 @@ class StudentRegController extends Controller
     	$data['shifts'] = StudentShift::all();
 
     	$data['editData'] = AssignStudent::with(['student','discount'])->where('student_id',$student_id)->first();
-    	 
+
     	return view('backend.student.student_reg.student_promotion',$data);
 
     }
@@ -216,10 +219,10 @@ class StudentRegController extends Controller
 
  public function StudentUpdatePromotion(Request $request,$student_id){
     	DB::transaction(function() use($request,$student_id){
-    	 
 
-    	 
-    	$user = User::where('id',$student_id)->first();    	 
+
+
+    	$user = User::where('id',$student_id)->first();
     	$user->name = $request->name;
     	$user->fname = $request->fname;
     	$user->mname = $request->mname;
@@ -239,7 +242,7 @@ class StudentRegController extends Controller
  	    $user->save();
 
           $assign_student = new AssignStudent();
-          
+
           $assign_student->student_id = $student_id;
           $assign_student->year_id = $request->year_id;
           $assign_student->class_id = $request->class_id;
@@ -264,7 +267,7 @@ class StudentRegController extends Controller
 
     	return redirect()->route('student.registration.view')->with($notification);
 
-    } // End Method 
+    } // End Method
 
 
 
@@ -276,9 +279,9 @@ class StudentRegController extends Controller
 	return $pdf->stream('document.pdf');
 
     }
-  
 
 
 
 
-} 
+
+}
