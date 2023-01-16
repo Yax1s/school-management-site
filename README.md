@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-   <b> <h2> School Management System </h2> </b>
+   <b> <h2> School Management Systems </h2> </b>
 </div>
 
 <div align="justify">
